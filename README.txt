@@ -28,7 +28,7 @@ Client Accounts:
   //change the account we are pointed at
   $comm->account = 'NEXT_ACCOUNT_ID';
 
-  //now we can print the domains in "ACCOUNT_ID".
+  //now we can print the domains in "NEXT_ACCOUNT_ID".
   print $comm->domain_list(); 
 
   //now if you want to print domains from your account you have to change it
