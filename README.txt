@@ -4,15 +4,15 @@ rsdns class:
 
 this class Abstracts the dns api away from curl.
 
-It impements a class constructor which takes in a username/password/
-"booleen value to the question "is this A UK account?"
+It implements a class constructor which takes in a username/password/
+"boolean value to the question "is this A UK account?"
 
 Example:
 $some_var = new rsdns('USERNAME','API_KEY',(TRUE|FALSE));
 
 Client Accounts:
 
-  The rsdns class will initialize to your main account ID automaticly.
+  The rsdns class will initialize to your main account ID automatically.
   Right now you have to initialize the object first THEN switch to the account
   number you want to use before you run your next operation. (Your account must 
   have control over the client account in question additionally as of this 
@@ -50,7 +50,7 @@ http://docs.rackspace.com/cdns/api/v1.0/cdns-devguide/content/index.html
 So if you can find the operation in there you should be able to find the 
 operation here. And under the same bullet point.
 
-EXAMPLES and documenation:
+EXAMPLES and documentation:
 
 4.1. Limits:
 
@@ -77,8 +77,8 @@ EXAMPLES and documenation:
   4.2.1. List Domains
       These calls provide a list of all DNS domains manageable by a given 
       account. The resulting list is flat, and does not break the domains down 
-      hierarchically by subdomain. All representative domains are included in 
-      the list, even if a domain is conceptually a subdomain of another domain 
+      hierarchically by sub-domain. All representative domains are included in 
+      the list, even if a domain is conceptually a sub-domain of another domain 
       in the list.
       synchronous calls:
 	rsdns :: domain_list();
@@ -97,10 +97,10 @@ EXAMPLES and documenation:
       and associated with an account. This call is not capable of returning 
       details for a domain that has been deleted.
       This function takes in a value which returns all records of this domain. 
-      And a value which returns subdomain deatils for this domain.
+      And a value which returns sub-domain details for this domain.
       synchronous calls:
-	rsdns :: domain_details('DOMAIN_ID','Booleen records',
-				 'Boolen subdomains');
+	rsdns :: domain_details('DOMAIN_ID','Boolean records',
+				 'Boolean sub-domains');
 
   4.2.3. List Domain Changes
       This call shows all changes to the specified domain since the specified 
@@ -114,11 +114,11 @@ EXAMPLES and documenation:
 	  This call provides the BIND (Berkeley Internet Name Domain) 9 formatted 
 	  contents of the requested domain. This call is for a single domain only, 
 	  and as such, does not traverse up or down the domain hierarchy for details
-	  (that is, no subdomain information is provided). This function uses my 
-	  insternal status(Apendex 1) function. Which can be passed it's own options. 
+	  (that is, no sub-domain information is provided). This function uses my 
+	  internal status(Appendix 1) function. Which can be passed it's own options. 
 	  
 	  Asynchronous call:
-	rsdns :: domain_export('DOMAIN_ID','booleen keepAlive')
+	rsdns :: domain_export('DOMAIN_ID','boolean keep-alive')
 
   4.2.5. Create Domain(s)
 	  This call provisions one or more new DNS domains under the account 
@@ -131,7 +131,7 @@ EXAMPLES and documenation:
 	  request again.
 	  
 	  Asynchronous call:
-	rsdns :: domain_create('json_request','booleen keepAlive')
+	rsdns :: domain_create('json_request','boolean keep-alive')
 
   4.2.6. Import Domain
 	  This call provisions a new DNS domain under the account specified by the 
@@ -144,7 +144,7 @@ EXAMPLES and documenation:
 	  and POST the request again.
 	  
 	  Asynchronous call:
-	rsdns :: domain_import('Bind 9 txt', 'booleen keepAlive')
+	rsdns :: domain_import('Bind 9 txt', 'boolean keep-alive')
 
   4.2.7. Modify Domain(s)
 	  This call modifies DNS domain(s) attributes only. Records cannot be added,
@@ -157,23 +157,23 @@ EXAMPLES and documenation:
 	  correct the cause of the failure and POST the request again.
     
 	  Asynchronous call:
-	rsdns :: domain_modify('json_request','booleen keepAlive')
-	rsdns :: domain_modify_any('json_request','booleen keepAlive')
+	rsdns :: domain_modify('json_request','boolean keep-alive')
+	rsdns :: domain_modify_any('json_request','boolean keep-alive')
 	  
   4.2.8. Remove Domain(s)
 	  This call removes one or more specified domains from the account; when a 
 	  domain is deleted, its immediate resource records are also deleted from 
-	  the account. By default, if a deleted domain had subdomains, each 
-	  subdomain becomes a root domain and is not deleted; this can be overridden
-	  by the optional deleteSubdomains parameter. Utilizing the optional 
-	  deleteSubdomains parameter on domains without subdomains does not result 
+	  the account. By default, if a deleted domain had sub-domains, each 
+	  sub-domain becomes a root domain and is not deleted; this can be overridden
+	  by the optional delete Sub-domains parameter. Utilizing the optional 
+	  delete Sub-domains parameter on domains without sub-domains does not result 
 	  in a failure. When a domain is deleted, any and all domain data is 
 	  immediately purged and is not recoverable via the API. So on a successful 
 	  delete, subsequent requests for the deleted object should return 
 	  itemNotFound (404).
 	  
 	  Asynchronous call:
-	rsdns :: domain_delete('array of domain IDs','booleen deleteSubdomains','booleen keepAlive') 
+	rsdns :: domain_delete('array of domain IDs','boolean delete Sub-domains','Boolean keep-alive') 
 	  
 
 4.3. Subdomains
@@ -200,7 +200,7 @@ EXAMPLES and documenation:
   4.4.3. Add Records
       This call adds new record(s) to the specified domain.
       Asynchronous calls:
-	rsdns :: record_add('DOMAIN_ID','json_request','booleen keepAlive')
+	rsdns :: record_add('DOMAIN_ID','json_request','boolean keep-alive')
 
       4.4.3.1. Add Wildcard Records
 	Users can add one or more wildcard records to any domain or sub-domain 
@@ -216,8 +216,8 @@ EXAMPLES and documenation:
       These calls modify the configuration of a specified record or multiple 
       records in the specified domain.
       Asynchronous calls:
-	rsdns :: record_modify('DOMAIN_ID','RECORD_ID','json_request','booleen keepAlive')
-	rsdns :: record_modify_any('DOMAIN_ID','json_request','booleen keepAlive')
+	rsdns :: record_modify('DOMAIN_ID','RECORD_ID','json_request','boolean keep-alive')
+	rsdns :: record_modify_any('DOMAIN_ID','json_request','boolean keep-alive')
 
   4.4.5. Remove Records
       These calls remove a specified record or multiple records from the 
@@ -225,15 +225,15 @@ EXAMPLES and documenation:
       immediately purged and is not recoverable via the API. So on a successful 
       delete, subsequent requests for the deleted record should return 
       itemNotFound (404).
-      Asynchrouous calls:
-	rsdns :: record_remove('DOMAIN_ID','RECORD_ID','json_request','booleen keepAlive')
-	rsdns :: record_remove_any('DOMAIN_ID','json_request','booleen keepAlive')
+      Asynchronous calls:
+	rsdns :: record_remove('DOMAIN_ID','RECORD_ID','json_request','Boolean keep-alive')
+	rsdns :: record_remove_any('DOMAIN_ID','json_request','Boolean keep-alive')
 
 Additional information:
 
 
-This class also implements a private status function which is responsilbe for 
-Asyncronous responses from the server. It only returns the completed response
+This class also implements a private status function which is responsible for 
+Asynchronous responses from the server. It only returns the completed response
 and properly waits for it's completion. (Updating every 2 seconds).
 The function exits on any one of these conditions. 
 1. that the task is completed, 
