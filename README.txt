@@ -195,7 +195,7 @@ EXAMPLES and documenation:
   4.4.2. List Record Details
       This call lists details for the specified record in the specified domain.
       synchronous calls:
-	rsdns :: record_list_id('DOMAIN_ID')
+	rsdns :: record_list_id('DOMAIN_ID','Record_ID')
 
   4.4.3. Add Records
       This call adds new record(s) to the specified domain.
