@@ -65,7 +65,7 @@ $date = $date->format('Y-m-dTH:i:s.000+0000');
 print "Test string not used: ". $date . "<br />";
 $comm->traverse(
       json_decode(
-            $comm->domain_changes('1621023')
+            $comm->domain_changes('DOMAIN_ID')
 ));
 */
 print '+++++++++++++++++++domain_export++++++++++++++<br />';
@@ -124,48 +124,48 @@ print '+++++++++++++++++++record_list++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_list('RECORD_ID')
+            $comm->record_list('DOMAIN_ID')
 ));
 */
 print '+++++++++++++++++++record_list_id++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_list_id('1621023',$recordID)
+            $comm->record_list_id('DOMAIN_ID','record_ID')
 ));
 */
 print '+++++++++++++++++++record_add++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_add('1621023',$config,0)
+            $comm->record_add('DOMAIN_ID','json_request','booleen keepAlive')
 ));
 */
 print '+++++++++++++++++++record_modify++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_modify('1621023',$recordID,$config,0)
+            $comm->record_modify('DOMAIN_ID','RECORD_ID','json_request','booleen keepAlive')
 ));
 */
 print '+++++++++++++++++++record_modify_any++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_modify_any('1621023',$config,0)
+            $comm->record_modify_any('DOMAIN_ID','json_request','booleen keepAlive')
 ));
 */
 print '+++++++++++++++++++record_remove++++++++++++++++<br />';
 /*
 $comm->traverse(
       json_decode(
-            $comm->record_remove('1621023',$recordID,$config,0)
+            $comm->record_remove('DOMAIN_ID','RECORD_ID','json_request','booleen keepAlive')
 ));
 */
 print '+++++++++++++++++++record_remove_any++++++++++++++++<br />';
 /*
 $comm->traverse(
-      json_decode($comm->record_remove_any('1621023',$config,0)
+      json_decode($comm->record_remove_any('DOMAIN_ID','json_request','booleen keepAlive')
 ));
 */
 print '+++++++++++++++++++++++++++++++++++++++++++++++<br />';
