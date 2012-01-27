@@ -8,7 +8,7 @@ It implements a class constructor which takes in a username/password/
 "boolean value to the question "is this A UK account?"
 
 Example:
-$some_var = new rsdns('USERNAME','API_KEY',(TRUE|FALSE));
+$some_var = new rsdns('USERNAME','API_KEY',TRUE OR FALSE);
 
 Client Accounts:
 
@@ -20,7 +20,7 @@ Client Accounts:
   panel). 
   e.g. 
 
-  $comm = new rsdns('USERNAME','API_KEY',(FALSE));
+  $comm = new rsdns('USERNAME','API_KEY',FALSE);
 
   //save a copy of your account number
   $my_account = $comm->account;
